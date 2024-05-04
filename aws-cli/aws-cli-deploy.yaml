@@ -2,15 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: awscli-sts-debug
-  name: awscli-sts-debug
+    app: awscli-sts-debug-anyuid
+  annotations:
+    openshift.io/scc: anyuid
+  name: awscli-sts-debug-anyuid
+  namespace: test-ns
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: awscli-sts-debug
+      app: awscli-sts-debug-anyuid
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,7 +22,7 @@ spec:
   template:
     metadata:
       labels:
-        app: awscli-sts-debug
+        app: awscli-sts-debug-anyuid
     spec:
       containers:
       - image: amazon/aws-cli:latest
