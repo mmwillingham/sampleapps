@@ -1,11 +1,19 @@
+---
+kind: ServiceAccount
+metadata:
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::519926745982:role/bosez-gdabs-Rosa-s3
+  name: test-sa
+  namespace: test-ns
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: awscli-sts-debug-anyuid
+    app: awscli-sts-debug
   annotations:
     openshift.io/scc: anyuid
-  name: awscli-sts-debug-anyuid
+  name: awscli-sts-debug
   namespace: test-ns
 spec:
   progressDeadlineSeconds: 600
@@ -13,7 +21,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: awscli-sts-debug-anyuid
+      app: awscli-sts-debug
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -22,7 +30,7 @@ spec:
   template:
     metadata:
       labels:
-        app: awscli-sts-debug-anyuid
+        app: awscli-sts-debug
     spec:
       containers:
       - image: amazon/aws-cli:latest
@@ -40,3 +48,6 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+      serviceAccount: test-sa
+      serviceAccountName: test-sa
+
