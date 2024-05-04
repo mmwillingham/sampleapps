@@ -1,5 +1,17 @@
 This deployment allow an AWS cli to connect to AWS resources using a service account.
-Replace AWS_ROLE_ARN with actual value
+AWS prereqs:
+- Create IAM trust policy
+- Create IAM role
+- Attach them together
+
+This working doc has the steps:
+https://docs.google.com/document/d/1nGuHfKrjHxxfEMnDsQS2gNqXOvV43SvZ7m66D87qTDw/edit
+
+Important info:
+    - In this yaml, replace with actual values
+    -- AWS_ROLE_ARN
+    -- Namespace
+    -- Service Account
 
 
 ## Create namespace
@@ -23,17 +35,25 @@ oc describe sa test-sa
 Annotations:         eks.amazonaws.com/role-arn: arn:aws:iam::519926745982:role/bosez-gdabs-Rosa-s3
 
 ## Create deployment
-https://github.com/mmwillingham/sampleapps/blob/main/aws-cli/aws-cli-deploy.yaml
+https://github.com/mmwillingham/sampleapps/blob/main/aws-cli/awscli-sts-debug.yaml
 
 ## Verify pods have STS info
-oc get pod -l app=awscli-sts-debug -ojson | jq '.spec.containers[].env'
-oc get pod -l app=awscli-sts-debug -ojson | jq '.spec.containers[].volumeMounts[]'
+oc get $(oc get pod -l app=awscli-sts-debug -oname) -ojson | jq -r '.spec.containers[].env'
+    ### There should be a correct value for AWS_ROLE_ARN and AWS_WEB_IDENTITY_TOKEN_FILE
+    AWS_WEB_IDENTITY_TOKEN_FILE might look like one of these - both seem to work
+    "value": "/var/run/secrets/eks.amazonaws.com/serviceaccount/token"
+    "value": "/var/run/secrets/openshift/serviceaccount/token"
+
+
+oc get $(oc get pod -l app=awscli-sts-debug -oname) -ojson | jq -r '.spec.containers[].volumeMounts'
+    ### There should be a key named aws-iam-token
+
+oc get $(oc get pod -l app=awscli-sts-debug -oname) -ojson | jq -r '.spec.volumes[].name'
+    ### There should be a key named aws-iam-token
 
 
 
-
-
-##Commands to test
+## Commands to test
 ## Open a terminal session in the pod
 oc debug deploy/awscli-sts-debug
 
