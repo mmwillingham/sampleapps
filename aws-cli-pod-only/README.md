@@ -1,4 +1,9 @@
-Replace AWS_ROLE_ARN with actual value
+The aws-cli folder has a deployment and better documentation.
+
+Replace with actual value
+AWS_ROLE_ARN
+Namespace
+Service Account
 
 
 
