@@ -13,6 +13,8 @@ Important info:
     -- Namespace
     -- Service Account
 
+NOTE: if the policy is scoped to specific ns and sa, you must use them here. It's possible to set the policy to allow any ns and any sa, if desired.
+
 
 ## Create namespace
 oc new-project test-ns
