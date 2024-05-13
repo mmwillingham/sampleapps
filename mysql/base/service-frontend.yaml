@@ -4,6 +4,7 @@ metadata:
   labels:
     app: todonodejs
     name: frontend
+    namespace: mysql
   name: frontend
 spec:
   ports:
