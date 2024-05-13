@@ -4,8 +4,8 @@ metadata:
   labels:
     app: nginx
     name: nginx
-    namespace: nginx
   name: nginx
+  namespace: nginx
 spec:
   ports:
   - port: 8080
