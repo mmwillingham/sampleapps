@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
+  namespace: mysql
   labels:
     app: todonodejs
     name: mysql
