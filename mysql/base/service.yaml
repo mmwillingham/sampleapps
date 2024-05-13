@@ -5,6 +5,7 @@ metadata:
     app: todonodejs
     name: mysql
   name: mysql
+  namespace: mysql
 spec:
   ports:
   - port: 3306
