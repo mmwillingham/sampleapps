@@ -16,8 +16,7 @@ spec:
         app.kubernetes.io/name: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - image: docker.io/bitnami/nginx
+        name: nginx
         ports:
-          - name: http
-            containerPort: 80
+        - containerPort: 8080
