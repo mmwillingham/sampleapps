@@ -1,6 +1,9 @@
 resources:
 - ../../base
 
+commonLabels:
+  app: hello-world-kustomize-staging
+
 images:
 - name: quay.io/redhattraining/do480-hello-app
   newTag: latest

@@ -1,5 +1,7 @@
 resources:
 - ../../base
+commonLabels:
+  app: hello-world-kustomize-prod
 
 patches:
   - patch: |-
