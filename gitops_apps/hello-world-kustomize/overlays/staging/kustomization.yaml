@@ -3,8 +3,7 @@ resources:
 - route.yaml
 - service.yaml
 
-commonLabels:
-  app: hello-world-kustomize-staging
+namePrefix: prod-
 
 images:
 - name: quay.io/redhattraining/do480-hello-app

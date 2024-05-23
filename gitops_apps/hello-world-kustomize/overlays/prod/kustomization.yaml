@@ -3,8 +3,7 @@ resources:
 - route.yaml
 - service.yaml
 
-commonLabels:
-  app: hello-world-kustomize-prod
+namePrefix: prod-
 
 patches:
   - patch: |-
@@ -17,9 +16,33 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/replicas
-        value: 2
+        value: 2  
     target:
       kind: Deployment
+
+
+kind: Deployment
+metadata:
+  name: hello-quay
+  labels:
+    app: hello-quay
+    name: hello-quay
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-quay
+      name: hello-quay
+  template:
+    metadata:
+      labels:
+        app: hello-quay
+        name: hello-quay
+    spec:
+      containers:
+      - name: hello-quay
+        image: quay.io/redhattraining/do480-hello-app:v1.0
+
 
   # - patch: |-
   #     - op: replace
