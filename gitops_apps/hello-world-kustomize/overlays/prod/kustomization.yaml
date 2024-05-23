@@ -9,3 +9,26 @@ patches:
         value: hello-world-k-prod
     target:
       kind: Namespace
+
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
+    target:
+      kind: Deployment
+
+
+  - patch: |-
+      - op: replace
+        path: /spec/ports/port
+        value: 8082
+    target:
+      kind: Service
+
+  - patch: |-
+      - op: replace
+        path: /spec/port/targetPort
+        value: 8082
+    target:
+      kind: Route
+

@@ -13,3 +13,18 @@ patches:
         value: hello-world-k-staging
     target:
       kind: Namespace
+
+  - patch: |-
+      - op: replace
+        path: /spec/ports/port
+        value: 8081
+    target:
+      kind: Service
+
+  - patch: |-
+      - op: replace
+        path: /spec/port/targetPort
+        value: 8081
+    target:
+      kind: Route
+
