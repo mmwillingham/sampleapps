@@ -7,6 +7,6 @@ metadata:
   name: hello-quay
 spec:
   ports:
-  - port: 8082
+  - port: OVERLAY_VALUE
   selector:
     name: hello-quay

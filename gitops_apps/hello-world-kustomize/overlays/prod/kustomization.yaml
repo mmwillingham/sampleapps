@@ -20,40 +20,16 @@ patches:
     target:
       kind: Deployment
 
+  - patch: |-
+      - op: replace
+        path: /spec/ports/0/port
+        value: 8082
+    target:
+      kind: Service
 
-kind: Deployment
-metadata:
-  name: hello-quay
-  labels:
-    app: hello-quay
-    name: hello-quay
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: hello-quay
-      name: hello-quay
-  template:
-    metadata:
-      labels:
-        app: hello-quay
-        name: hello-quay
-    spec:
-      containers:
-      - name: hello-quay
-        image: quay.io/redhattraining/do480-hello-app:v1.0
-
-
-  # - patch: |-
-  #     - op: replace
-  #       path: /spec/ports/0/port
-  #       value: 8082
-  #   target:
-  #     kind: Service
-
-  # - patch: |-
-  #     - op: replace
-  #       path: /spec/port/targetPort
-  #       value: 8082
-  #   target:
-  #     kind: Route
+  - patch: |-
+      - op: replace
+        path: /spec/port/targetPort
+        value: 8082
+    target:
+      kind: Route
