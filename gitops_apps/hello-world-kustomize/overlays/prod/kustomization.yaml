@@ -31,7 +31,6 @@ patches:
   #       value: 8082
   #   target:
   #     kind: Route
-
 - patch: |-
     apiVersion: v1
     kind: Service
