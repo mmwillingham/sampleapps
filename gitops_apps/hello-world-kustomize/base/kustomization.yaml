@@ -3,7 +3,7 @@ kind: Kustomization
 commonLabels:
   app: hello-world-kustomize
 resources:
-- base/namespace.yaml
-- base/deployment.yaml
-- base/service.yaml
-- base/route.yaml
+- namespace.yaml
+- deployment.yaml
+- service.yaml
+- route.yaml
