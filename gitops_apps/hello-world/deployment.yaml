@@ -6,7 +6,7 @@ metadata:
     app: hello-quay
     name: hello-quay
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: hello-quay
