@@ -20,7 +20,7 @@ patches:
 
   - patch: |-
       - op: replace
-        path: /spec/ports/port
+        path: /spec/ports/0/port
         value: 8082
     target:
       kind: Service
