@@ -13,7 +13,7 @@ spec:
     name: hello-quay
     weight: 100
   port:
-    targetPort: 8082
+    targetPort: 8080
   wildcardPolicy: None
   tls:
     termination: edge  
