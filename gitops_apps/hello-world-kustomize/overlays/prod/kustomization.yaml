@@ -1,3 +1,11 @@
 resources:
 - ../../base
 namePrefix: prod-
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /metadata/name
+        value: hello-world-k-prod
+    target:
+      kind: Namespace

@@ -1,3 +1,15 @@
 resources:
 - ../../base
 namePrefix: staging-
+
+images:
+- name: quay.io/redhattraining/do480-hello-app
+  newTag: latest
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /metadata/name
+        value: hello-world-k-staging
+    target:
+      kind: Namespace

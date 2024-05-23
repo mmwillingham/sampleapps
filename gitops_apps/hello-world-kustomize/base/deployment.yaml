@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
       - name: hello-quay
-        image: quay.io/redhattraining/do480-hello-app:latest
+        image: quay.io/redhattraining/do480-hello-app:v1.0
