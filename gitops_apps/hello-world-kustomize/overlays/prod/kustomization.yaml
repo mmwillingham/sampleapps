@@ -18,7 +18,6 @@ patches:
     target:
       kind: Deployment
 
-
   - patch: |-
       - op: replace
         path: /spec/ports/0/port
