@@ -22,6 +22,9 @@ patches:
       - op: replace
         path: /spec/port/targetPort
         value: 8082
+      - op: replace
+        path: /spec/to/name
+        value: prod-hello-quay
     target:
       kind: Route
 
