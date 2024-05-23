@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-world
+spec:
+  selector:
+    app: hello-world
+  ports:
+    - port: 5678
