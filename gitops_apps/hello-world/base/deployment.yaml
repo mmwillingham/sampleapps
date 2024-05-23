@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: quay.io/powercloud/http-echo
+        image: quay.io/podman/hello
         args:
           - "-text=hello-world"
