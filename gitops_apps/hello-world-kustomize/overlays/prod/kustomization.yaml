@@ -1,8 +1,6 @@
 resources:
 - ../../base
 
-namePrefix: prod-
-
 patches:
   - patch: |-
       - op: replace
@@ -15,9 +13,7 @@ patches:
       - op: replace
         path: /spec/ports/0/port
         value: 8082
-      - op: replace
-        path: /spec/selector/name
-        value: prod-hello-quay
+
     target:
       kind: Service
 
@@ -25,9 +21,6 @@ patches:
       - op: replace
         path: /spec/port/targetPort
         value: 8082
-      - op: replace
-        path: /spec/to/name
-        value: prod-hello-quay
     target:
       kind: Route
 
@@ -35,8 +28,5 @@ patches:
       - op: replace
         path: /spec/replicas
         value: 2
-      - op: replace
-        path: /spec/template/spec/name
-        value: prod-hello-quay
     target:
       kind: Deployment

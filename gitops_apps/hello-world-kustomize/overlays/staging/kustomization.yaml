@@ -1,8 +1,6 @@
 resources:
 - ../../base
 
-namePrefix: staging-
-
 patches:
   - patch: |-
       - op: replace
