@@ -16,9 +16,8 @@ patches:
         path: /spec/ports/0/port
         value: 8082
       - op: replace
-        path: /metadata/labels/name
+        path: /spec/selector/name
         value: prod-hello-quay
-   
     target:
       kind: Service
 
