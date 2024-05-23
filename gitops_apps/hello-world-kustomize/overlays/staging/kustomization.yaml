@@ -1,5 +1,7 @@
 resources:
 - ../../base
+- route.yaml
+- service.yaml
 
 commonLabels:
   app: hello-world-kustomize-staging
@@ -16,17 +18,17 @@ patches:
     target:
       kind: Namespace
 
-  - patch: |-
-      - op: replace
-        path: /spec/ports/0/port
-        value: 8081
-    target:
-      kind: Service
+  # - patch: |-
+  #     - op: replace
+  #       path: /spec/ports/0/port
+  #       value: 8081
+  #   target:
+  #     kind: Service
 
-  - patch: |-
-      - op: replace
-        path: /spec/port/targetPort
-        value: 8081
-    target:
-      kind: Route
+  # - patch: |-
+  #     - op: replace
+  #       path: /spec/port/targetPort
+  #       value: 8081
+  #   target:
+  #     kind: Route
 

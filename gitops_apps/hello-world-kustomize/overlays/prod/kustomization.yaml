@@ -1,5 +1,8 @@
 resources:
 - ../../base
+- route.yaml
+- service.yaml
+
 commonLabels:
   app: hello-world-kustomize-prod
 
@@ -17,34 +20,6 @@ patches:
         value: 2
     target:
       kind: Deployment
-
-  - patch: |-
-      apiVersion: v1
-      kind: Service
-      metadata:
-        name: hello-quay
-      spec:
-        ports:
-        - port: 8082
-
-  - patch: |-
-      kind: Route
-      apiVersion: route.openshift.io/v1
-      metadata:
-        name: hello-quay
-        labels:
-          app: hello-quay
-          name: hello-quay
-      spec:
-        to:
-          kind: Service
-          name: hello-quay
-          weight: 100
-        port:
-          targetPort: 8082
-        wildcardPolicy: None
-        tls:
-          termination: edge
 
   # - patch: |-
   #     - op: replace
