@@ -8,6 +8,10 @@ spec:
     kind: Service
     name: hello-quay-blue
     weight: 100
+  alternateBackends:
+    - weight: 0
+      kind: Service
+      name: hello-quay-green 
   port:
     targetPort: 8080
   tls:
