@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - namespace.yaml
-- deployment.yaml
+- deployment-blue.yaml
+- deployment-green.yaml
 - route.yaml
 - service.yaml

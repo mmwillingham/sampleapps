@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: fastapiwebhook
+  namespace: bitroid-dev
+  labels: {}
+spec:
+  to:
+    kind: Service
+    name: fastapiwebhook-blue
+    weight: 100
+  alternateBackends:
+    - weight: 0
+      kind: Service
+      name: fastapiwebhook-green
+  port:
+    targetPort: 8000
+  tls: {}
+  path: /

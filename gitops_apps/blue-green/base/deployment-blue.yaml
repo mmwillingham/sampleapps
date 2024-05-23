@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: bitroid-dev
+  name: fastapiwebhook-blue
+  annotations: {}
+spec:
+  selector:
+    matchLabels:
+      app: fastapiwebhook-blue
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: fastapiwebhook-blue
+    spec:
+      containers:
+        - name: container
+          image: 'quay.io/hemanth22/fastapiwebhook-blue:latest'
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env: []
+      imagePullSecrets: []
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  paused: false
