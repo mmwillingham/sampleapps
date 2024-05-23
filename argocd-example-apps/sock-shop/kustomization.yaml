@@ -1,4 +1,5 @@
 resources:
+- base/namespace.yaml
 - base/carts-db-dep.yaml
 - base/carts-db-svc.yaml
 - base/carts-dep.yaml
