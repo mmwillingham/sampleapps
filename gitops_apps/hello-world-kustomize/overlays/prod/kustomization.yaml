@@ -18,19 +18,6 @@ patches:
     target:
       kind: Deployment
 
-  # - patch: |-
-  #     - op: replace
-  #       path: /spec/ports/0/port
-  #       value: 8082
-  #   target:
-  #     kind: Service
-
-  # - patch: |-
-  #     - op: replace
-  #       path: /spec/port/targetPort
-  #       value: 8082
-  #   target:
-  #     kind: Route
 - patch: |-
     apiVersion: v1
     kind: Service
@@ -47,4 +34,16 @@ patches:
       port:
         targetPort: 8082
 
+  # - patch: |-
+  #     - op: replace
+  #       path: /spec/ports/0/port
+  #       value: 8082
+  #   target:
+  #     kind: Service
 
+  # - patch: |-
+  #     - op: replace
+  #       path: /spec/port/targetPort
+  #       value: 8082
+  #   target:
+  #     kind: Route
