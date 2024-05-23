@@ -3,11 +3,7 @@ resources:
 - route.yaml
 - service.yaml
 
-namePrefix: prod-
-
-images:
-- name: quay.io/redhattraining/do480-hello-app
-  newTag: latest
+namePrefix: staging-
 
 patches:
   - patch: |-
@@ -17,17 +13,20 @@ patches:
     target:
       kind: Namespace
 
-  # - patch: |-
-  #     - op: replace
-  #       path: /spec/ports/0/port
-  #       value: 8081
-  #   target:
-  #     kind: Service
+  - patch: |-
+      - op: replace
+        path: /spec/ports/0/port
+        value: 8081
+    target:
+      kind: Service
 
-  # - patch: |-
-  #     - op: replace
-  #       path: /spec/port/targetPort
-  #       value: 8081
-  #   target:
-  #     kind: Route
+  - patch: |-
+      - op: replace
+        path: /spec/port/targetPort
+        value: 8081
+    target:
+      kind: Route
 
+images:
+- name: quay.io/redhattraining/do480-hello-app
+  newTag: latest

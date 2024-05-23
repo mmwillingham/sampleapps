@@ -15,13 +15,6 @@ patches:
 
   - patch: |-
       - op: replace
-        path: /spec/replicas
-        value: 2  
-    target:
-      kind: Deployment
-
-  - patch: |-
-      - op: replace
         path: /spec/ports/0/port
         value: 8082
     target:
@@ -33,3 +26,10 @@ patches:
         value: 8082
     target:
       kind: Route
+
+  - patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2  
+    target:
+      kind: Deployment
