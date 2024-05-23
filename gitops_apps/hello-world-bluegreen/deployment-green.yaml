@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-quay-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-quay-green
+  template:
+    metadata:
+      labels:
+        app: hello-quay-green
+    spec:
+      containers:
+      - name: hello-quay
+        image: quay.io/redhattraining/do480-hello-app:latest
