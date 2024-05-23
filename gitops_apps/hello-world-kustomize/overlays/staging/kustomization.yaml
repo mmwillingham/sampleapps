@@ -1,7 +1,5 @@
 resources:
 - ../../base
-- route.yaml
-- service.yaml
 
 namePrefix: staging-
 
