@@ -17,22 +17,22 @@ patches:
         value: 2
     target:
       kind: Deployment
+      
+  - patch: |-
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: hello-quay
+      spec:
+        ports:
+        - port: 8082
 
-- patch: |-
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: hello-quay
-    spec:
-      ports:
-      - port: 8082
-
-- patch: |-
-    apiVersion: apps/v1
-    kind: Route
-    spec:
-      port:
-        targetPort: 8082
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Route
+      spec:
+        port:
+          targetPort: 8082
 
   # - patch: |-
   #     - op: replace
