@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fastapiwebhook-blue
+  name: fastapiwebhook-green
   annotations: {}
 spec:
   selector:
