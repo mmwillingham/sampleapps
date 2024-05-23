@@ -5,7 +5,6 @@ metadata:
   labels:
     app: hello-quay
     name: hello-quay
-  namespace: operate-review
 spec:
 #  host: hello-quay.apps.ocp4.example.com
   subdomain: ''

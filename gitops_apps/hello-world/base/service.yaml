@@ -5,7 +5,6 @@ metadata:
     app: hello-quay
     name: hello-quay
   name: hello-quay
-  namespace: operate-review
 spec:
   ports:
   - port: 8080
