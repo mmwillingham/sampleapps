@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: quay.io/podman/hello
+        image: registry.access.redhat.com/ubi8/ruby-27
