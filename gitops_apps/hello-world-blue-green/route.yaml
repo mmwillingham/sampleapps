@@ -9,9 +9,9 @@ spec:
   to:
     kind: Service
     name: hello-quay-blue
-    weight: 0
+    weight: 100
   alternateBackends:
-    - weight: 100
+    - weight: 0
       kind: Service
       name: hello-quay-green 
   port:
