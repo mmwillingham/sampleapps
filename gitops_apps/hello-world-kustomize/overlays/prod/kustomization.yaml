@@ -41,7 +41,7 @@ patches:
           name: hello-quay
           weight: 100
         port:
-          targetPort: OVERLAY_VALUE
+          targetPort: 8082
         wildcardPolicy: None
         tls:
           termination: edge
