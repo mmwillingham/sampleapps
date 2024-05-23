@@ -1,6 +1,5 @@
 resources:
 - ../../base
-namePrefix: staging-
 
 images:
 - name: quay.io/redhattraining/do480-hello-app
