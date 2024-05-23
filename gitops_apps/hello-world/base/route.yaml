@@ -1,10 +1,18 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: hello-world
+  name: hello-quay
+  labels:
+    app: hello-quay
+    name: hello-quay
+  namespace: operate-review
 spec:
+#  host: hello-quay.apps.ocp4.example.com
+  subdomain: ''
   to:
     kind: Service
-    name: hello-world
-  tls:
-     termination: edge
+    name: hello-quay
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
