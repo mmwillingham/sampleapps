@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-quay-blue
 spec:
-  replicas: 1                                                   # GREEN HAS 1 REPLICA
+  replicas: 1                                                  # BLUE HAS 1 REPLICA
   selector:
     matchLabels:
       app: hello-quay-blue
@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: hello-quay
-        image: quay.io/redhattraining/do480-hello-app:latest     # GREEN HAS V1.0 TAG
+        image: quay.io/redhattraining/do480-hello-app:v1.0     # BLUE HAS v1.0 TAG
