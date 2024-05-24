@@ -9,12 +9,6 @@ commonLabels:
   app: hello-quay-green
 
 patches:
-  - patch: |-
-      - op: replace
-        path: /metadata/name
-        value: hello-world-bg-green
-    target:
-      kind: Namespace
 
   - patch: |-
       - op: replace
