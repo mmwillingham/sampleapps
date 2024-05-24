@@ -5,9 +5,9 @@ metadata:
 spec:
   strategy:
     type: RollingUpdate
-      rollingUpdate:
-        maxSurge: 2
-        maxUnavailable: 1
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
   replicas: 3
   selector:
     matchLabels:
