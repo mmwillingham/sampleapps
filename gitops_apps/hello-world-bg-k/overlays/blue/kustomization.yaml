@@ -1,6 +1,5 @@
 resources:
 - ../../base
-
 patches:
   - patch: |-
       - op: replace
@@ -8,7 +7,6 @@ patches:
         value: hello-world-bg-blue
      target:
       kind: Namespace
-
   - patch: |-
       - op: replace
         path: /metadata/name
