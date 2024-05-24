@@ -6,8 +6,8 @@ patches:
       - op: replace
         path: /metadata/name
         value: hello-world-bg-green
-     target:
-       kind: Namespace
+    target:
+      kind: Namespace
 
   - patch: |-
       - op: replace
@@ -35,5 +35,5 @@ patches:
       - op: replace
         path: /spec/selector/matchLabels/0/app
         value: hello-quay-green
-     target:
-       kind: Service   
+    target:
+      kind: Service   
