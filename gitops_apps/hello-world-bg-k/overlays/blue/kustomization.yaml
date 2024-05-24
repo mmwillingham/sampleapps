@@ -40,4 +40,10 @@ patches:
     target:
       kind: Service
 
-?
+# replacements:
+# - source:
+#     kind: Deployment
+#     fieldPath: spec.selector.matchLabels.app
+#   targets:
+#   - select:
+#       name: hello-quay-blue
