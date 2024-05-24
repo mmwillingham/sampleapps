@@ -8,8 +8,8 @@ spec:
     rollingUpdate:
       maxSurge: 2
       maxUnavailable: 3
-      minReadySeconds: 5
-      progressDeadlineSeconds: 10
+  minReadySeconds: 5
+  progressDeadlineSeconds: 10
   replicas: 6
   selector:
     matchLabels:
