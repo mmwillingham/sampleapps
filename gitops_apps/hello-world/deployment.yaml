@@ -3,7 +3,12 @@ kind: Deployment
 metadata:
   name: hello-quay
 spec:
-  replicas: 1
+  strategy:
+    type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 2
+        maxUnavailable: 1
+  replicas: 3
   selector:
     matchLabels:
       app: hello-quay
@@ -12,11 +17,6 @@ spec:
       labels:
         app: hello-quay
     spec:
-      strategy:
-        type: RollingUpdate
-        rollingUpdate:
-          maxSurge: 25%
-          maxUnavailable: 25%    
       containers:
       - name: hello-quay
         image: quay.io/redhattraining/do480-hello-app:latest
