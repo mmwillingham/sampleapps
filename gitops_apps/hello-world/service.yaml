@@ -6,4 +6,4 @@ spec:
   ports:
   - port: 8080
   selector:
-    name: hello-quay
+    app: hello-quay
