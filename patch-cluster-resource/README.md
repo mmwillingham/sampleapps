@@ -14,18 +14,15 @@ metadata:
   name: hello-quay
   labels:
     app: hello-quay
-    name: hello-quay
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: hello-quay
-      name: hello-quay
   template:
     metadata:
       labels:
         app: hello-quay
-        name: hello-quay
     spec:
       containers:
       - name: hello-quay
