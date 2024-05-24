@@ -10,7 +10,7 @@ spec:
       maxUnavailable: 3
   minReadySeconds: 30
   progressDeadlineSeconds: 60
-  replicas: 4
+  replicas: 6
   selector:
     matchLabels:
       app: hello-quay
@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: hello-quay
-        #image: quay.io/redhattraining/do480-hello-app:v1.0
-        image: quay.io/redhattraining/do480-hello-app:latest
+        image: quay.io/redhattraining/do480-hello-app:v1.0
+        #image: quay.io/redhattraining/do480-hello-app:latest
         #image: quay.io/redhattraining/do480-hello-app:NOT_A_VERSION
