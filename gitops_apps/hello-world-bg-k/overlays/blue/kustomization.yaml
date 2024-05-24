@@ -29,9 +29,9 @@ patches:
   - patch: |-
       - op: replace
         path: /metadata/name
-        value: hello-quay-green
+        value: hello-quay-blue
       # - op: replace
       #   path: /spec/selector/matchLabels/0/app
-      #   value: hello-quay-green
+      #   value: hello-quay-blue
     target:
       kind: Service   
