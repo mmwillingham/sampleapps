@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- labels:
-    app: hello-quay             # existing labels
-    name: hello-quay            # existing labels
+  labels:
     foo: bar                    # new label
 name: hello-quay
