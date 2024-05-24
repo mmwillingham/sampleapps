@@ -17,7 +17,7 @@ patches:
         path: /spec/replicas
         value: 2                                # BLUE HAS 2 REPLICAS
       - op: replace
-        path: /spec/selector/matchLabels/0/app
+        path: /spec/selector/matchLabels/app
         value: hello-quay-blue
       - op: replace
         path: /spec/template/labels/0/app
