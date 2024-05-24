@@ -3,11 +3,12 @@ resources:
 
 patches:
   - patch: |-
-      - op: replace
-        path: /metadata/name
-        value: hello-world-bg-blue
      target:
        kind: Namespace
+       - op: replace
+        path: /metadata/name
+        value: hello-world-bg-blue
+
 
   - patch: |-
       - op: replace
