@@ -1,13 +1,20 @@
 resources:
 - ../../base
 
+patches:
+  - patch: |-
+      - op: replace
+        path: /metadata/name
+        value: hello-quay-bg-blue
+     target:
+      kind: Namespace
   - patch: |-
       - op: replace
         path: /metadata/name
         value: hello-quay-blue
       - op: replace
         path: /spec/replicas
-        value: 2
+        value: 2                                # BLUE HAS 2 REPLICAS
       - op: replace
         path: /spec/selector/matchLabels/0/app
         value: hello-quay-blue
