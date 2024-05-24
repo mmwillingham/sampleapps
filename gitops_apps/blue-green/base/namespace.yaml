@@ -4,3 +4,5 @@ metadata:
   name: blue-green
   labels:
     argocd.argoproj.io/managed-by: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"    

@@ -6,3 +6,5 @@ metadata:
   name: ocp-ops-view
   labels:
     argocd.argoproj.io/managed-by: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
