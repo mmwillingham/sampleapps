@@ -7,10 +7,6 @@ spec:
   selector:
     matchLabels:
       app: OVERLAY_VALUE
-  template:
-    metadata:
-      labels:
-        app: OVERLAY_VALUE
     spec:
       containers:
       - name: hello-quay
