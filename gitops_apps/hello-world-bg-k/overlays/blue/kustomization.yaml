@@ -5,8 +5,8 @@ images:
 - name: quay.io/redhattraining/do480-hello-app
   newTag: latest # BLUE HAS v1.0 TAG
 
-commonLabels:
-  app: hello-quay-blue
+# commonLabels:
+#   app: hello-quay-blue
 
 patches:
   - patch: |-
@@ -26,12 +26,3 @@ patches:
       - op: replace
     target:
       kind: Deployment
-
-
-# replacements:
-# - source:
-#     kind: Deployment
-#     fieldPath: spec.selector.matchLabels.app
-#   targets:
-#   - select:
-#       name: hello-quay-blue
