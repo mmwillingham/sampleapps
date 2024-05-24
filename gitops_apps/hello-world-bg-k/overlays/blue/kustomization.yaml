@@ -3,7 +3,7 @@ resources:
 
 images:
 - name: quay.io/redhattraining/do480-hello-app
-  newTag: v1.0 # BLUE HAS v1.0 TAG
+  newTag: v1.0
 
 commonLabels:
   app: hello-quay-blue
