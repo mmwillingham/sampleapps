@@ -4,14 +4,6 @@ resources:
   - patch: |-
       - op: replace
         path: /metadata/name
-        value: hello-quay-bg-blue
-     target:
-      kind: Namespace
-
-patches:
-  - patch: |-
-      - op: replace
-        path: /metadata/name
         value: hello-quay-blue
       - op: replace
         path: /spec/replicas

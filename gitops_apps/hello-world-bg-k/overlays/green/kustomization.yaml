@@ -1,14 +1,13 @@
 resources:
 - ../../base
 
+patches:
   - patch: |-
       - op: replace
         path: /metadata/name
         value: hello-quay-bg-green
      target:
       kind: Namespace
-
-patches:
   - patch: |-
       - op: replace
         path: /metadata/name
