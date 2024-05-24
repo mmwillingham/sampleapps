@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ labels:
+   foo: bar                    # new label
+name: hello-quay
+namespace: argocd-patch
