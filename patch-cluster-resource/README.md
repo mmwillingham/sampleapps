@@ -1,7 +1,7 @@
 Use argocd (GitOps) to update an existing cluster resource that is not controlled by argocd.
 https://argo-cd.readthedocs.io/en/stable/user-guide/sync-options/#server-side-apply
 
-# This does not work as expected.
+# This does not work as expected. It throws error that replicas is required.
 
 ## Steps
 ### Create a cluster resource manually / not with argocd
