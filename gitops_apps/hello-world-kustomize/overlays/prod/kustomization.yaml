@@ -13,7 +13,6 @@ patches:
       - op: replace
         path: /spec/ports/0/port
         value: 8082
-
     target:
       kind: Service
 
