@@ -3,7 +3,10 @@ resources:
 
 images:
 - name: quay.io/redhattraining/do480-hello-app
-  newTag: v1.0  # GREEN HAS V1.0 TAG
+  newTag: latest  # GREEN HAS latest TAG
+
+commonLabels:
+  app: hello-quay-green
 
 patches:
   - patch: |-
@@ -19,22 +22,13 @@ patches:
         value: hello-quay-green
       - op: replace
         path: /spec/replicas
-        value: 1                               # GREEN HAS 1 REPLICA
-      - op: replace
-        path: /spec/selector/matchLabels/0/app
-        value: hello-quay-green
-      - op: replace
-        path: /spec/template/labels/0/app
-        value: hello-quay-green
+        value: 1                                # GREEN HAS 2 REPLICAS
     target:
       kind: Deployment
 
   - patch: |-
       - op: replace
         path: /metadata/name
-        value: hello-quay-green
-      - op: replace
-        path: /spec/selector/matchLabels/0/app
         value: hello-quay-green
     target:
       kind: Service   
