@@ -3,4 +3,4 @@ kind: Deployment
 metadata:
   labels:
     foo: bar                    # new label
-name: hello-quay
+  name: hello-quay
