@@ -20,7 +20,7 @@ patches:
         path: /spec/selector/matchLabels/app
         value: hello-quay-blue
       - op: replace
-        path: /spec/template/labels/app
+        path: /spec/template/labels/0/app
         value: hello-quay-blue
       - op: replace
         path: /spec/containers/0/image
