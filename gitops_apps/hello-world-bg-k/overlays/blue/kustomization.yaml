@@ -43,7 +43,7 @@ patches:
 replacements:
 - source:
     kind: Deployment
-    fieldPath: spec.selector.matchLabels.0
+    fieldPath: spec.selector.matchLabels.app
   targets:
   - select:
-      app: hello-quay-blue
+      name: hello-quay-blue
