@@ -8,6 +8,7 @@ patches:
         value: hello-quay-bg-blue
      target:
       kind: Namespace
+      
   - patch: |-
       - op: replace
         path: /metadata/name
