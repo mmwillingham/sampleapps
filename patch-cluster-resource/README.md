@@ -1,4 +1,5 @@
 Use argocd (GitOps) to update an existing cluster resource that is not controlled by argocd.
+https://argo-cd.readthedocs.io/en/stable/user-guide/sync-options/#server-side-apply
 
 ## Steps
 ### Create a cluster resource manually / not with argocd
@@ -44,7 +45,7 @@ namespace: argocd-patch
 oc get deploy hello-quay -n argocd-patch --show-labels
 
 ### Create an argocd app with ServerSideApply=true
-argocd app create std-repo --repo https://github.com/mmwillingham/sampleapps.git --path patch-cluster-resource --dest-server https://kubernetes.default.svc --sync-policy automated --self-heal --sync-option Prune=true --dest-namespace argocd-patch
+argocd app create argocd-patch --repo https://github.com/mmwillingham/sampleapps.git --path patch-cluster-resource --dest-server https://kubernetes.default.svc --sync-policy automated --self-heal --sync-option ServerSideApply=true --dest-namespace argocd-patch
 
 ### Verify label does exist
 oc get deploy hello-quay -n argocd-patch --show-labels
