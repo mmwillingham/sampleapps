@@ -16,9 +16,9 @@ patches:
       - op: replace
         path: /spec/replicas
         value: 2                                # BLUE HAS 2 REPLICAS
-      - op: replace
-        path: /spec/selector/matchLabels/app
-        value: hello-quay-blue
+      # - op: replace
+      #   path: /spec/selector/matchLabels/app
+      #   value: hello-quay-blue
       - op: replace
         path: /spec/template/metadata/labels/app
         value: hello-quay-blue
@@ -36,4 +36,12 @@ patches:
         path: /spec/selector/matchLabels/0/app
         value: hello-quay-blue
     target:
-      kind: Service      
+      kind: Service
+
+replacements:
+- source:
+    kind: Deployment
+    fieldPath: spec.selector.matchLabels.app
+  targets:
+  - select:
+      name: hello-quay-blue
