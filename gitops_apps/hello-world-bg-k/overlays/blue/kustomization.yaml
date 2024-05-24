@@ -1,12 +1,14 @@
 resources:
 - ../../base
+
 patches:
   - patch: |-
       - op: replace
         path: /metadata/name
         value: hello-world-bg-blue
      target:
-      kind: Namespace
+       kind: Namespace
+
   - patch: |-
       - op: replace
         path: /metadata/name
@@ -34,4 +36,4 @@ patches:
         path: /spec/selector/matchLabels/0/app
         value: hello-quay-blue
      target:
-      kind: Service      
+       kind: Service      
