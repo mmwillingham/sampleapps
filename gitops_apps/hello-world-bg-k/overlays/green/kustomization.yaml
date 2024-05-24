@@ -1,6 +1,10 @@
 resources:
 - ../../base
 
+images:
+- name: quay.io/redhattraining/do480-hello-app
+  newTag: v1.0  # GREEN HAS V1.0 TAG
+
 patches:
   - patch: |-
       - op: replace
@@ -22,9 +26,6 @@ patches:
       - op: replace
         path: /spec/template/labels/0/app
         value: hello-quay-green
-      - op: replace
-        path: /spec/containers/0/image
-        value: quay.io/redhattraining/do480-hello-app:v1.0     # GREEN HAS v1.0 TAG
     target:
       kind: Deployment
 

@@ -1,6 +1,11 @@
 resources:
 - ../../base
 
+images:
+- name: quay.io/redhattraining/do480-hello-app
+  newTag: latest # BLUE HAS v1.0 TAG
+
+
 patches:
   - patch: |-
       - op: replace
@@ -22,9 +27,6 @@ patches:
       - op: replace
         path: /spec/template/metadata/labels/app
         value: hello-quay-blue
-      - op: replace
-        path: /spec/template/spec/containers/0/image
-        value: quay.io/redhattraining/do480-hello-app:v1.0     # BLUE HAS v1.0 TAG
     target:
       kind: Deployment
 
@@ -41,7 +43,7 @@ patches:
 replacements:
 - source:
     kind: Deployment
-    fieldPath: spec.selector.matchLabels.0.app
+    fieldPath: spec.selector.matchLabels.0
   targets:
   - select:
-      name: hello-quay-blue
+      app: hello-quay-blue
