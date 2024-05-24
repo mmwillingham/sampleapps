@@ -10,7 +10,7 @@ spec:
       maxUnavailable: 3
   minReadySeconds: 30
   progressDeadlineSeconds: 60
-  replicas: 6
+  replicas: 3
   selector:
     matchLabels:
       app: hello-quay
