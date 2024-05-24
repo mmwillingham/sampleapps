@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: hello-quay
-        image: OVERLAY_VALUE     # BLUE HAS v1.0 TAG
+        image: quay.io/redhattraining/do480-hello-app:v1.0
