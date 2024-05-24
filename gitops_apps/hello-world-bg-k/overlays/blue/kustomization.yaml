@@ -5,24 +5,33 @@ images:
 - name: quay.io/redhattraining/do480-hello-app
   newTag: latest # BLUE HAS v1.0 TAG
 
-# commonLabels:
-#   app: hello-quay-blue
+commonLabels:
+  app: hello-quay-blue
 
 patches:
-  # - patch: |-
-  #     - op: replace
-  #       path: /metadata/name
-  #       value: hello-world-bg-blue
-  #   target:
-  #     kind: Namespace
-
   - patch: |-
       - op: replace
         path: /metadata/name
-        value: hello-quay-blue
-      - op: replace
-        path: /spec/replicas
-        value: 2                                # BLUE HAS 2 REPLICAS
-      - op: replace
+        value: hello-world-bg-blue
     target:
-      kind: Deployment
+      kind: Namespace
+
+  # - patch: |-
+  #     - op: replace
+  #       path: /metadata/name
+  #       value: hello-quay-blue
+  #     - op: replace
+  #       path: /spec/replicas
+  #       value: 2                                # BLUE HAS 2 REPLICAS
+  #     - op: replace
+  #   target:
+  #     kind: Deployment
+
+
+# replacements:
+# - source:
+#     kind: Deployment
+#     fieldPath: spec.selector.matchLabels.app
+#   targets:
+#   - select:
+#       name: hello-quay-blue
