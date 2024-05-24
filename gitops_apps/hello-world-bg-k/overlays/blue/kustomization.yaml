@@ -5,10 +5,10 @@ patches:
   - patch: |-
       - op: replace
         path: /metadata/name
-        value: hello-quay-bg-blue
+        value: hello-world-bg-blue
      target:
       kind: Namespace
-      
+
   - patch: |-
       - op: replace
         path: /metadata/name
