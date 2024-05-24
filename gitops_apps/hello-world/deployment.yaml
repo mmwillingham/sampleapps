@@ -12,6 +12,11 @@ spec:
       labels:
         app: hello-quay
     spec:
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxSurge: 25%
+          maxUnavailable: 25%    
       containers:
       - name: hello-quay
         image: quay.io/redhattraining/do480-hello-app:latest
