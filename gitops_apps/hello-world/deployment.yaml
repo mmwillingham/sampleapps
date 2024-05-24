@@ -8,7 +8,7 @@ spec:
     rollingUpdate:
       maxSurge: 2
       maxUnavailable: 1
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: hello-quay
