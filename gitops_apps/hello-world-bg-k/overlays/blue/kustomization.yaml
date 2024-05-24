@@ -26,11 +26,12 @@ patches:
     target:
       kind: Deployment
 
-
-# replacements:
-# - source:
-#     kind: Deployment
-#     fieldPath: spec.selector.matchLabels.app
-#   targets:
-#   - select:
-#       name: hello-quay-blue
+  - patch: |-
+      - op: replace
+        path: /metadata/name
+        value: hello-quay-green
+      # - op: replace
+      #   path: /spec/selector/matchLabels/0/app
+      #   value: hello-quay-green
+    target:
+      kind: Service   
