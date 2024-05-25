@@ -18,12 +18,15 @@ argocd app delete hello-world-bg -y
     Deployment - Green
         2 replicas
         Image tag: latest
+
     Route - weight to each service
 
 # Weighted 100% to blue
 curl https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
 Image version : v1.0
 
+# Change route to 100% green
+
 # Weighted 100% to green
-https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+curl https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
 Image version : latest
