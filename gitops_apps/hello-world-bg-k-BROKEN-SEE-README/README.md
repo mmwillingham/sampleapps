@@ -23,6 +23,7 @@ argocd app create hello-world-bg-k-blue \
 --sync-policy automated \
 --self-heal \
 --sync-option Prune=true \
+--sync-option CreateNamespace=true \
 --dest-namespace hello-world-bg
 
 argocd app delete hello-world-bg-k-blue -y
@@ -35,6 +36,7 @@ argocd app create hello-world-bg-k-green \
 --sync-policy automated \
 --self-heal \
 --sync-option Prune=true \
+--sync-option CreateNamespace=true \
 --dest-namespace hello-world-bg
 
 argocd app delete hello-world-bg-k-green -y

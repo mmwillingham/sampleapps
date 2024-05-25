@@ -6,8 +6,10 @@ argocd app create hello-world-bg \
 --sync-policy automated \
 --self-heal \
 --sync-option Prune=true \
+--sync-option CreateNamespace=true \
 --dest-namespace hello-world-bg
 
+# Delete
 argocd app delete hello-world-bg -y
 
 # Show layout and files

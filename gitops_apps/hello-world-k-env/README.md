@@ -7,6 +7,7 @@ argocd app create hello-world-k-stage \
 --self-heal \
 --sync-option ServerSideApply=true \
 --sync-option Validate=false \
+--sync-option CreateNamespace=true \
 --dest-namespace hello-world-k-stage
 
 argocd app delete hello-world-k-stage -y
