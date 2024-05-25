@@ -29,7 +29,11 @@ oc get route
 # Canary (rolling update)
 ## Show strategy - deployment in argoCD
 ## Change version to v1.0   Show that always 3 versions are available
+        #image: quay.io/redhattraining/do480-hello-app:v1.0
+        image: quay.io/redhattraining/do480-hello-app:latest
 
+# First terminal:
+watch oc get pods
 
-curl https://hello-quay-hello-world.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+# second terminal:
 while true; do curl https://hello-quay-hello-world.apps.bosez-20240521.5nay.p1.openshiftapps.com/; sleep 1; done
