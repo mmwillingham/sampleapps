@@ -10,8 +10,10 @@ argocd app create hello-world-k-stage \
 --sync-option CreateNamespace=true \
 --dest-namespace hello-world-k-stage
 
-argocd app delete hello-world-k-stage -y
 curl https://hello-world-hello-world-k-stage.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+
+# Delete
+argocd app delete hello-world-k-stage -y
 
 # PROD
 argocd app create hello-world-k-prod \
@@ -22,8 +24,10 @@ argocd app create hello-world-k-prod \
 --self-heal \
 --sync-option ServerSideApply=true \
 --sync-option Validate=false \
+--sync-option CreateNamespace=true \
 --dest-namespace hello-world-k-prod
 
-https://hello-world-hello-world-k-prod.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+curl https://hello-world-hello-world-k-prod.apps.bosez-20240521.5nay.p1.openshiftapps.com/
 
+# Delete
 argocd app delete hello-world-k-prod -y
