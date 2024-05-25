@@ -34,9 +34,9 @@ patches:
     target:
       kind: Route
 
-  - patch: |-
-      - op: replace
-        path: /metadata/name
-        value: hello-world-k-prod
-    target:
-      kind: Namespace
+  # - patch: |-
+  #     - op: replace
+  #       path: /metadata/name
+  #       value: hello-world-k-prod
+  #   target:
+  #     kind: Namespace

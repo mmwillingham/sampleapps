@@ -7,6 +7,7 @@ argocd app create hello-world \
 --sync-policy automated \
 --self-heal \
 --sync-option Prune=true \
+--sync-option CreateNamespace=true \
 --dest-namespace hello-world
 
 # Delete
