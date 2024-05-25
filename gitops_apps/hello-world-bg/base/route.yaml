@@ -1,17 +1,17 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: fastapiwebhook
+  name: hello-world
   labels: {}
 spec:
   to:
     kind: Service
-    name: fastapiwebhook-blue
+    name: hello-world-blue
     weight: 100
   alternateBackends:
     - weight: 0
       kind: Service
-      name: fastapiwebhook-green
+      name: hello-world-green
   port:
     targetPort: 8000
   tls: {}
