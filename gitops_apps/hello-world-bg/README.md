@@ -25,8 +25,10 @@ argocd app delete hello-world-bg -y
 curl https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
 Image version : v1.0
 
-# Change route to 100% green
+# Keep it running
+while true; do curl https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/; sleep 1; done
 
-# Weighted 100% to green
-curl https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+# Change route to 100% green
+# Check curl
+
 Image version : latest
