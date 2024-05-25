@@ -6,7 +6,8 @@ spec:
   selector:
     app: hello-world-blue
   ports:
-    - protocol: TCP
-      # port: 8000
-      # targetPort: 8000
-      targetPort: 8080
+  - port: 8080
+    # - protocol: TCP
+    #   port: 8000
+    #   targetPort: 8000
+      
