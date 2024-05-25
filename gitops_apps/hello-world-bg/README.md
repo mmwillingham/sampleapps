@@ -29,6 +29,7 @@ Image version : v1.0
 while true; do curl https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/; sleep 1; done
 
 # Change route to 100% green
-# Check curl
+# Then click refresh in argoCD console
 
+# Check curl
 Image version : latest
