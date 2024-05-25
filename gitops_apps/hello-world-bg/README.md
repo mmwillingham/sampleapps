@@ -9,3 +9,21 @@ argocd app create hello-world-bg \
 --dest-namespace hello-world-bg
 
 argocd app delete hello-world-bg -y
+
+# Show layout and files
+# Repo: https://github.com/mmwillingham/sampleapps/tree/main/gitops_apps/hello-world-blue-green
+    Deployment - Blue
+        1 replica
+        Image tag: 1.0
+    Deployment - Green
+        2 replicas
+        Image tag: latest
+    Route - weight to each service
+
+# Weighted 100% to blue
+https://hello-quay-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+Image version : v1.0
+
+# Weighted 100% to green
+https://hello-quay-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+Image version : latest
