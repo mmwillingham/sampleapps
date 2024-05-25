@@ -30,7 +30,7 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/to/name
-        value: hello-world-prod
+        value: hello-world-prod 
     target:
       kind: Route
 
