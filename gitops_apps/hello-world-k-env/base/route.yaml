@@ -10,7 +10,7 @@ spec:
     kind: Service
     name: OVERLAY_VALUE
     weight: 100
-    port:
-     targetPort: 8080
+  port:
+    targetPort: 8080
   tls:
     termination: edge  
