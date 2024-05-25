@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: container
-          image: 'quay.io/hemanth22/fastapiwebhook-green:latest'
+#          image: 'quay.io/hemanth22/fastapiwebhook-blue:latest'
+          image: quay.io/redhattraining/do480-hello-app:latest
           ports:
             - containerPort: 8080
               protocol: TCP
