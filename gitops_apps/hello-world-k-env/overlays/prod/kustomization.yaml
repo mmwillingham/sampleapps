@@ -3,7 +3,7 @@ resources:
 
 images:
 - name: quay.io/redhattraining/do480-hello-app
-  newTag: latest  # PROD HAS v1.0 TAG
+  newTag: v1.0  # PROD HAS v1.0 TAG
 
 commonLabels:
   app: hello-world-prod
@@ -30,7 +30,7 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/to/name
-        value: hello-world-prod 
+        value: hello-world-prod
     target:
       kind: Route
 

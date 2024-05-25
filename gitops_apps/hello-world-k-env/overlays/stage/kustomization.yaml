@@ -30,5 +30,13 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/to/name
+        value: hello-world-stage        
     target:
       kind: Route
+
+  - patch: |-
+      - op: replace
+        path: /metadata/name
+        value: hello-world-k-stage
+    target:
+      kind: Namespace      
