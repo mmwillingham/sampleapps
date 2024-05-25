@@ -7,5 +7,6 @@ spec:
     app: hello-world-blue
   ports:
     - protocol: TCP
-      port: 8000
-      targetPort: 8000
+      # port: 8000
+      # targetPort: 8000
+      targetPort: 8080

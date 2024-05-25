@@ -13,6 +13,7 @@ spec:
       kind: Service
       name: hello-world-green
   port:
-    targetPort: 8000
+#    targetPort: 8000
+    targetPort: 8080
   tls: {}
   path: /
