@@ -21,9 +21,9 @@ argocd app delete hello-world-bg -y
     Route - weight to each service
 
 # Weighted 100% to blue
-https://hello-quay-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+curl https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
 Image version : v1.0
 
 # Weighted 100% to green
-https://hello-quay-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
+https://hello-world-hello-world-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/
 Image version : latest

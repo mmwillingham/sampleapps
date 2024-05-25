@@ -7,9 +7,9 @@ spec:
   to:
     kind: Service
     name: hello-world-blue
-    weight: 100
+    weight: 0
   alternateBackends:
-    - weight: 0
+    - weight: 100
       kind: Service
       name: hello-world-green
   port:
