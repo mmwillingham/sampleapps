@@ -40,6 +40,11 @@ service:
   type: ClusterIP
   port: 8080
 
+route:
+  enabled: true
+  host: null
+  targetPort: http
+  
 ingress:
   enabled: false
   className: ""
