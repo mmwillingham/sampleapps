@@ -1,6 +1,6 @@
-argocd app create demo-app \
+argocd app create hello-world-helm \
 --repo https://github.com/mmwillingham/sampleapps.git \
---path demo-app \
+--path gitops_apps/hello-world-helm \
 --dest-server https://kubernetes.default.svc \
 --sync-policy automated \
 --self-heal \
@@ -9,6 +9,6 @@ argocd app create demo-app \
 --sync-option CreateNamespace=true \
 --parameter namespace=demo-app
 
+# DELETE
 argocd app delete hello-world-helm -y
 
-Delete from console until understand why "FATA[0000] rpc error: code = PermissionDenied desc = permission denied "
