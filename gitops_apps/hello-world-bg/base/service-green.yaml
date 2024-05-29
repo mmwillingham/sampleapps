@@ -7,6 +7,3 @@ spec:
     app: hello-world-green
   ports:
   - port: 8080
-    # - protocol: TCP
-    #   port: 8000
-    #   targetPort: 8000
