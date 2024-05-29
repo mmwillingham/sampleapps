@@ -7,8 +7,6 @@ argocd app create hello-world-k-stage \
 --dest-server https://kubernetes.default.svc \
 --sync-policy automated \
 --self-heal \
---sync-option ServerSideApply=true \
---sync-option Validate=false \
 --dest-namespace hello-world-k-stage
 
 argocd app delete hello-world-k-stage -y
@@ -21,8 +19,6 @@ argocd app create hello-world-k-prod \
 --dest-server https://kubernetes.default.svc \
 --sync-policy automated \
 --self-heal \
---sync-option ServerSideApply=true \
---sync-option Validate=false \
 --dest-namespace hello-world-k-prod
 
 https://hello-world-hello-world-k-prod.apps.bosez-20240521.5nay.p1.openshiftapps.com/
