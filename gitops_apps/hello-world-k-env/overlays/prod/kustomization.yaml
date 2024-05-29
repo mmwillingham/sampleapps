@@ -16,7 +16,7 @@ patches:
         value: hello-world-prod
       - op: replace
         path: /spec/replicas
-        value: 2                                # PROD HAS 2 REPLICAS
+        value: 3                                # PROD HAS 2 REPLICAS
     target:
       kind: Deployment
 
