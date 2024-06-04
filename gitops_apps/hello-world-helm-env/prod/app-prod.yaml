@@ -13,7 +13,7 @@ metadata:
   name: default
   namespace: openshift-gitops
 spec:
-  project: hello-world-helm-env-prod
+  project: default
   sources:
     - chart: hello-world-helm-env
       repoURL: https://mmwillingham.github.io/sampleapps
