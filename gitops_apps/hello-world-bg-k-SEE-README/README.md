@@ -4,6 +4,9 @@
 ## Namespace/hello-world-bg is part of applications openshift-gitops/hello-world-bg-k-green and hello-world-bg-k-blue
 ## Route/hello-quay is part of applications openshift-gitops/hello-world-bg-k-green and hello-world-bg-k-blue
 
+# Maybe exclude route
+# Maybe try without route resource
+
 
 # Show layout and files
 # Repo: https://github.com/mmwillingham/sampleapps/tree/main/gitops_apps/hello-world-blue-green
