@@ -3,5 +3,5 @@ name: swagger
 description: Explore the OpenShift 4.11.0 APIs with SwaggerUI
 icon: https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png
 type: application
-version: 7.0.8
+version: 7.0.9
 appVersion: "1.0.1"
