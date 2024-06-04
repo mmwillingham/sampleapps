@@ -10,7 +10,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-world-helm-env-prod
+  name: default
   namespace: openshift-gitops
 spec:
   project: hello-world-helm-env-prod
