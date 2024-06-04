@@ -3,6 +3,17 @@ entries:
   swagger:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2024-06-04T18:36:19.142378539Z"
+    description: Explore the OpenShift 4.11.0 APIs with SwaggerUI
+    digest: 87b5755ddac8314f33af6d0d0d117d5c6fdff5137a447042ccb17d1bbdb5f91c
+    icon: https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png
+    name: swagger
+    type: application
+    urls:
+    - https://github.com/mmwillingham/sampleapps/releases/download/swagger-7.0.9/swagger-7.0.9.tgz
+    version: 7.0.9
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2024-06-04T18:28:10.298445951Z"
     description: Explore the OpenShift 4.11.0 APIs with SwaggerUI
     digest: ee34f3418c21bf75d5783ae42d75a17e90348a75da490f7ee2da70e8eac0f178
@@ -12,4 +23,4 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/swagger-7.0.8/swagger-7.0.8.tgz
     version: 7.0.8
-generated: "2024-06-04T18:28:10.298457553Z"
+generated: "2024-06-04T18:36:19.142412041Z"
