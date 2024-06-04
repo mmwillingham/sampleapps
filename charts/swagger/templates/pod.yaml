@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.app }}
+    owner: {{ .Values.owner }}
+    vendor: {{ .Values.vendor }}    
+spec:
+  restartPolicy: {{ .Values.restartPolicy }}
+  containers:
+  - name: {{ .Values.containerName }}
+    image: {{ .Values.containerImage }}
+    imagePullPolicy: {{ .Values.imagePullPolicy }}
+    resources:
+      requests:
+        memory: {{ .Values.containerRequestsMemory }}
+        cpu: {{ .Values.containerRequestsCpu }}
+      limits:
+        memory: {{ .Values.containerLimitsMemory }}
+        cpu: {{ .Values.containerLimitsCpu }}
+    env:
+    - name: BASE_URL
+      value: "/swagger" 
+    - name: SWAGGER_JSON
+      value: "/ocp-4-11-0.json"
+    ports:
+    - containerPort: 8080
