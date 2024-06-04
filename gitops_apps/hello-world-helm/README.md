@@ -1,3 +1,4 @@
+```
 argocd app create hello-world-helm \
 --repo https://github.com/mmwillingham/sampleapps.git \
 --path gitops_apps/hello-world-helm \
@@ -11,4 +12,4 @@ argocd app create hello-world-helm \
 
 # DELETE
 argocd app delete hello-world-helm -y
-
+```
