@@ -9,7 +9,7 @@ apiVersion: argoproj.io/v1alpha1
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-world-helm-prod
+  name: hello-world-helm-env-prod
   namespace: openshift-gitops
 spec:
   project: hello-world-helm-env-prod
@@ -26,7 +26,7 @@ spec:
       ref: values        
   destination:    
     server: https://kubernetes.default.svc
-    namespace: hello-world-helm-prod
+    namespace: hello-world-helm-env-prod
   syncPolicy:
     automated:
       prune: true
