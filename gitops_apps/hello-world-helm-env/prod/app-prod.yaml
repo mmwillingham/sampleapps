@@ -20,7 +20,7 @@ spec:
       targetRevision: 0.1.0
       helm:
         valueFiles:
-        - $values/gitops_apps/charts/hello-world-helm-env/values-prod.yaml
+        - $values/charts/hello-world-helm-env/values-prod.yaml
     # Values from Git
     - repoURL: 'https://github.com/mmwillingham/sampleapps'
       targetRevision: HEAD
