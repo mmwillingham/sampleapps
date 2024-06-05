@@ -7,7 +7,9 @@ kind: Route
 metadata:
   annotations:
     openshift.io/host.generated: "true"
-  name: {{ $fullName }}
+  # name: {{ $fullName }}
+  name: etherpad-prod
+
   labels:
     {{- include "etherpad.labels" . | nindent 4 }}
 spec:
