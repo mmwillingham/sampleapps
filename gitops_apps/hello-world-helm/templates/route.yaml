@@ -8,6 +8,8 @@ metadata:
   annotations:
     openshift.io/host.generated: "true"
   name: {{ $fullName }}
+  
+  
   labels:
     {{- include "demo-app.labels" . | nindent 4 }}
 spec:

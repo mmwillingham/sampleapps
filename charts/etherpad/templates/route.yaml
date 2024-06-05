@@ -1,31 +1,47 @@
-{{- if .Values.route.enabled -}}
-{{- $fullName := include "etherpad.fullname" . -}}
-{{- $svcPort := .Values.service.port -}}
----
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  annotations:
-    openshift.io/host.generated: "true"
-  # name: {{ $fullName }}
-  name: etherpad-prod
+# {{- if .Values.route.enabled -}}
+# {{- $fullName := include "etherpad.fullname" . -}}
+# {{- $svcPort := .Values.service.port -}}
+# ---
+# apiVersion: route.openshift.io/v1
+# kind: Route
+# metadata:
+#   annotations:
+#     openshift.io/host.generated: "true"
+#   name: {{ $fullName }}
 
-  labels:
-    {{- include "etherpad.labels" . | nindent 4 }}
-spec:
-  host: {{ .Values.route.host | quote }}
-  port:
-    targetPort: {{ .Values.route.targetPort | default "8080-tcp" }}
+#   labels:
+#     {{- include "etherpad.labels" . | nindent 4 }}
+# spec:
+#   host: {{ .Values.route.host | quote }}
+#   port:
+#     targetPort: {{ .Values.route.targetPort | default "8080-tcp" }}
+#   to:
+#     kind: Service
+#     name: {{ $fullName }}
+#     weight: 100
+#   tls:
+#     insecureEdgeTerminationPolicy: Redirect
+#     termination: edge
+# status:
+#   ingress:
+#       conditions:
+#         - status: 'True'
+#           type: Admitted
+# {{ end }}
+
+{{- if .Values.route.enabled -}}
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: etherpad-prod
+spec:  
   to:
     kind: Service
-    name: {{ $fullName }}
+    name: etherpad-prod
     weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
-status:
-  ingress:
-      conditions:
-        - status: 'True'
-          type: Admitted
-{{ end }}
