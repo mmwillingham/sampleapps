@@ -22,6 +22,20 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/etherpad-0.1.0/etherpad-0.1.0.tgz
     version: 0.1.0
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-06-05T15:01:40.513127843Z"
+    description: A Helm chart for etherpad lite
+    digest: 4f28ac3baef7fa54549114205d0a033dd75806c1c425cb6958536c68d5dc826f
+    home: https://github.com/redhat-cop/helm-charts
+    icon: https://pbs.twimg.com/profile_images/1336377123964145665/2gTadaDt_400x400.jpg
+    maintainers:
+    - name: eformat
+    name: etherpad
+    type: application
+    urls:
+    - https://github.com/mmwillingham/sampleapps/releases/download/etherpad-0.0.7/etherpad-0.0.7.tgz
+    version: 0.0.7
   swagger:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -45,4 +59,4 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/swagger-7.0.8/swagger-7.0.8.tgz
     version: 7.0.8
-generated: "2024-06-05T14:33:26.458585966Z"
+generated: "2024-06-05T15:01:40.513146678Z"
