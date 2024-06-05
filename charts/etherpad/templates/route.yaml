@@ -28,7 +28,7 @@
 #         - status: 'True'
 #           type: Admitted
 # {{ end }}
-
+{{- if .Values.route.enabled -}}
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
