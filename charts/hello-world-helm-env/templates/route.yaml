@@ -1,17 +1,17 @@
 {{- if .Values.route.enabled -}}
-{{- $fullName := include "demo-app.fullname" . -}}
+{{- $fullName := include "etherpad.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  # annotations:
-  #   openshift.io/host.generated: "true"
+  annotations:
+    openshift.io/host.generated: "true"
   name: {{ $fullName }}
-  # labels:
-  #   {{- include "demo-app.labels" . | nindent 4 }}
+  labels:
+    {{- include "etherpad.labels" . | nindent 4 }}
 spec:
-#  host: {{ .Values.route.host | quote }}
+  host: {{ .Values.route.host | quote }}
   port:
     targetPort: {{ .Values.route.targetPort | default "8080-tcp" }}
   to:
@@ -21,27 +21,9 @@ spec:
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
-# status:
-#   ingress:
-#     - conditions:
-#         - status: 'True'
-#           type: Admitted
+status:
+  ingress:
+    - conditions:
+        - status: 'True'
+          type: Admitted
 {{ end }}
-
-# Swagger example
-# kind: Route
-# apiVersion: route.openshift.io/v1
-# metadata:
-#   name: swagger
-#   labels:
-#     app: swagger-openshift
-#     owner: mmw
-# spec:  
-#   path: /swagger
-#   to:
-#     kind: Service
-#     name: swagger-service
-#     weight: 100
-#   port:
-#     targetPort: swagger
-#   wildcardPolicy: None

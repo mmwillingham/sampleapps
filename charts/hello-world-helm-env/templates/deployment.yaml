@@ -1,42 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "demo-app.fullname" . }}
-  namespace: {{ .Values.namespace }}
+  name: {{ include "etherpad.fullname" . }}
   labels:
-    {{- include "demo-app.labels" . | nindent 4 }}
+    {{- include "etherpad.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
-      {{- include "demo-app.selectorLabels" . | nindent 6 }}
+      {{- include "etherpad.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       labels:
-        {{- include "demo-app.selectorLabels" . | nindent 8 }}
+        {{- include "etherpad.selectorLabels" . | nindent 8 }}
     spec:
-      {{- with .Values.imagePullSecrets }}
+    {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
-      {{- end }}
-      serviceAccountName: {{ include "demo-app.serviceAccountName" . }}
+    {{- end }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
+        - env:
+          - name: TITLE
+            value: {{ .Values.defaultTitle }}
+          - name: DEFAULT_PAD_TEXT
+            value: {{ .Values.defaultText }}
+          name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}/{{ default .Chart.Name .Values.image.name }}:{{ default .Chart.AppVersion .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: 9001
               protocol: TCP
           livenessProbe:
             httpGet:
@@ -48,15 +45,26 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
+          volumeMounts:
+            - name: etherpad-data
+              mountPath: {{ .Values.persistence.mountPath }}
+    {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with .Values.affinity }}
+    {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
+    {{- end }}
+    {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-      {{- end }}
+    {{- end }}
+      volumes:
+      - name: etherpad-data
+    {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ .Values.persistence.existingClaim | default (printf "%s" (include "etherpad.fullname" .)) }}
+    {{- else }}
+        emptyDir: {}
+    {{- end }}
