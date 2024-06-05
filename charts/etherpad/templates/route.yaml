@@ -23,7 +23,6 @@ spec:
     termination: edge
 status:
   ingress:
-    - routerName: default
       conditions:
         - status: 'True'
           type: Admitted
