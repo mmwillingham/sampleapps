@@ -10,24 +10,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-world
+  name: etherpad
   namespace: openshift-gitops
 spec:
   project: default
   sources:
-    - chart: demo-app
+    - chart: etherpad
       repoURL: https://mmwillingham.github.io/sampleapps
       targetRevision: 0.1.0
       helm:
         valueFiles:
-        - $values/charts/hello-world-helm-env/values-prod.yaml
+        - $values/charts/etherpad/values-prod.yaml
     # Values from Git
     - repoURL: 'https://github.com/mmwillingham/sampleapps'
       targetRevision: HEAD
       ref: values        
   destination:    
     server: https://kubernetes.default.svc
-    namespace: hello-world-helm-env-prod
+    namespace: etherpad-prod
   syncPolicy:
     automated:
       prune: true
