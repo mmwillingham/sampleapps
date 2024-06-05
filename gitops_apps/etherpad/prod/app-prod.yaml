@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: etherpad
+  name: etherpad-prod
   namespace: openshift-gitops
 spec:
   project: prod
