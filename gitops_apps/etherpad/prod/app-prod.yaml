@@ -35,4 +35,9 @@ spec:
     syncOptions:
       - CreateNamespace=true      
       - RespectIgnoreDifferences=true
+  ignoreDifferences:
+    - group: route.openshift.io
+      kind: Route
+      jsonPointers:
+      - /status
 ...
