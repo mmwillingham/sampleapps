@@ -11,6 +11,17 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/demo-app-0.1.0/demo-app-0.1.0.tgz
     version: 0.1.0
+  etherpad:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-05T14:33:26.45857753Z"
+    description: A Helm chart for Kubernetes
+    digest: e3f77a581d7f57d72946aa34a8193eaf466d44c0ecf12c4ab1019129d93b2c51
+    name: etherpad
+    type: application
+    urls:
+    - https://github.com/mmwillingham/sampleapps/releases/download/etherpad-0.1.0/etherpad-0.1.0.tgz
+    version: 0.1.0
   swagger:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -34,4 +45,4 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/swagger-7.0.8/swagger-7.0.8.tgz
     version: 7.0.8
-generated: "2024-06-04T18:50:07.73494391Z"
+generated: "2024-06-05T14:33:26.458585966Z"
