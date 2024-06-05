@@ -31,4 +31,3 @@ spec:
       kind: Route
       jsonPointers:
       - /status
-...
