@@ -21,9 +21,9 @@ spec:
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
-status:
-  ingress:
-    - conditions:
-        - status: 'True'
-          type: Admitted
+# status:
+#   ingress:
+#     - conditions:
+#         - status: 'True'
+#           type: Admitted
 {{ end }}
