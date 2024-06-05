@@ -1,4 +1,5 @@
 # Default values for etherpad.
+
 replicaCount: 2
 
 defaultTitle: "Labs Etherpad"
@@ -12,7 +13,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: "etherpad-prod"
 
 podSecurityContext: {}
 securityContext: {}
