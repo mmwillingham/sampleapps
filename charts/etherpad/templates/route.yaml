@@ -34,12 +34,6 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: etherpad-prod
   namespace: etherpad-prod
-  labels:
-    app.kubernetes.io/instance: etherpad-prod
-    app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: etherpad
-    app.kubernetes.io/version: latest
-    helm.sh/chart: etherpad-0.0.15
 spec:
   to:
     kind: Service
