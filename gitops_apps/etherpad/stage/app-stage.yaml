@@ -1,11 +1,11 @@
----
-# apiVersion: v1
-# kind: Namespace
-# metadata:
-#   name: hello-world-helm-env-stage
-#   labels:
-# #apiVersion: argoproj.io/v1alpha1
-# apiVersion: v1
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: etherpad-stage
+  labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"    
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -17,7 +17,7 @@ spec:
   sources:
     - chart: etherpad
       repoURL: https://mmwillingham.github.io/sampleapps
-      targetRevision: 0.0.10
+      targetRevision: 0.0.22
       helm:
         valueFiles:
         - $values/charts/etherpad/values-stage.yaml
@@ -40,4 +40,3 @@ spec:
       kind: Route
       jsonPointers:
       - /status
-...
