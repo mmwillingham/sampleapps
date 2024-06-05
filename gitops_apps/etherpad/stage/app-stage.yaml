@@ -1,0 +1,43 @@
+---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: hello-world-helm-env-stage
+#   labels:
+# #apiVersion: argoproj.io/v1alpha1
+# apiVersion: v1
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: etherpad
+  namespace: openshift-gitops
+spec:
+  project: default
+  sources:
+    - chart: etherpad
+      repoURL: https://mmwillingham.github.io/sampleapps
+      targetRevision: 0.0.10
+      helm:
+        valueFiles:
+        - $values/charts/etherpad/values-stage.yaml
+    # Values from Git
+    - repoURL: 'https://github.com/mmwillingham/sampleapps'
+      targetRevision: HEAD
+      ref: values        
+  destination:    
+    server: https://kubernetes.default.svc
+    namespace: etherpad-stage
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true      
+      - RespectIgnoreDifferences=true
+  ignoreDifferences:
+    - group: route.openshift.io
+      kind: Route
+      jsonPointers:
+      - /status
+...
