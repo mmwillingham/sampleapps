@@ -8,7 +8,7 @@ spec:
   sources:
     - chart: etherpad
       repoURL: https://mmwillingham.github.io/sampleapps
-      targetRevision: 0.0.14
+      targetRevision: 0.0.15
       helm:
         valueFiles:
         - $values/charts/etherpad/values-prod.yaml
