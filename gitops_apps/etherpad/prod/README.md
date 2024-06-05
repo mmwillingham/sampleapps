@@ -1,5 +1,5 @@
 ```
-argocd app create etherpad-prod \
+<!-- argocd app create etherpad-prod \
 --repo https://github.com/mmwillingham/sampleapps.git \
 --path gitops_apps/etherpad/prod \
 --dest-server https://kubernetes.default.svc \
@@ -7,7 +7,15 @@ argocd app create etherpad-prod \
 --self-heal \
 --sync-option Prune=true \
 --dest-namespace etherpad-prod \
---sync-option CreateNamespace=true \
+--sync-option CreateNamespace=true \ -->
+
+argocd app create etherpad-prod \
+--repo https://github.com/mmwillingham/sampleapps.git \
+--path gitops_apps/etherpad/prod \
+--dest-server https://kubernetes.default.svc \
+--sync-policy automated  \
+--grpc-web
+
 
 
 # DELETE
