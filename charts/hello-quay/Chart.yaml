@@ -3,5 +3,5 @@ name: hello-quay
 description: Sample App
 icon: https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png
 type: application
-version: 0.0.1
+version: 0.0.2
 appVersion: "v1.0"
