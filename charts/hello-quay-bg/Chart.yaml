@@ -1,5 +1,5 @@
 apiVersion: v2
-name: hello-quay
+name: hello-quay-bg
 description: Sample App
 icon: https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png
 type: application
