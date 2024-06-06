@@ -10,6 +10,10 @@ argocd app create hello-quay-bg \
 --project default \
 --dest-namespace hello-quay-bg
 
+while true; do curl https://hello-quay-hello-quay-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/; sleep 1; done
+
+
+
 # Delete
 argocd app delete hello-quay-bg -y
 
