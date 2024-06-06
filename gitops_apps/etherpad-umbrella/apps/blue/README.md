@@ -1,8 +1,7 @@
 ```
-
 argocd app create etherpad-umbrella-blue \
 --repo https://github.com/mmwillingham/sampleapps.git \
---path gitops_apps/etherpad-umbrella/blue \
+--path gitops_apps/etherpad-umbrella/apps/blue \
 --dest-server https://kubernetes.default.svc \
 --sync-policy automated  \
 --self-heal \
@@ -10,7 +9,6 @@ argocd app create etherpad-umbrella-blue \
 --dest-namespace etherpad-umbrella-blue  \
 --sync-option CreateNamespace=true \
 --grpc-web
-
 
 
 # DELETE
