@@ -1,5 +1,3 @@
-# Default values for etherpad.
-
 replicaCount: 2
 
 defaultTitle: "Labs Etherpad"
