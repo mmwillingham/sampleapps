@@ -8,7 +8,7 @@ argocd app create hello-quay-bg \
 --sync-option CreateNamespace=true \
 --project default \
 --dest-namespace hello-quay-bg \
---revision 0.0.5
+--revision 0.0.6
 
 
 while true; do curl https://hello-quay-hello-quay-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/; sleep 1; done
