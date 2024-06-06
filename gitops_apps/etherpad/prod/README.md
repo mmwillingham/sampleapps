@@ -1,4 +1,17 @@
 ```
+To create the helm repo
+cat << EOF > add_repo.yaml
+apiVersion: helm.openshift.io/v1beta1
+kind: HelmChartRepository
+metadata:  
+  name: mmwillingham-repo  
+spec:
+  connectionConfig:
+    url: 'https://mmwillingham.github.io/sampleapps/'
+  name: MMW Helm Charts
+EOF
+oc apply -f add_repo.yaml
+
 NOTE: This does not work unless the application is named "etherpad".
 Instead, run with oc apply
 oc apply -f https://raw.githubusercontent.com/mmwillingham/sampleapps/main/gitops_apps/etherpad/prod/app-prod.yaml
