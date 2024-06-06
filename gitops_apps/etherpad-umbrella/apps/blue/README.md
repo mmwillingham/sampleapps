@@ -16,4 +16,3 @@ argocd app delete etherpad-umbrella-blue -y
 argocd app delete etherpad-umbrella-blue -y --grpc-web; oc delete project etherpad-umbrella-blue ; oc patch Application etherpad-umbrella-blue -n openshift-gitops -p '{"metadata":{"finalizers":null}}' --type=merge
 
 ```
-

@@ -19,7 +19,7 @@ spec:
   project: default
   source:
     path: gitops_apps/etherpad-umbrella
-    repoURL: https://github.com/mmwillingham/sampleapps/gitops_apps/etherpad-umbrella
+    repoURL: https://github.com/mmwillingham/sampleapps
     targetRevision: HEAD
     helm:
       valueFiles:
