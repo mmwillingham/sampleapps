@@ -1,9 +1,7 @@
 ```
-
- NOTE: This does not work unless the application is named "etherpad".
- Instead, run with oc apply
- oc apply -f https://raw.githubusercontent.com/mmwillingham/sampleapps/main/gitops_apps/etherpad/prod/app-prod.yaml
- oc apply -f https://raw.githubusercontent.com/mmwillingham/sampleapps/main/gitops_apps/etherpad/stage/app-stage.yaml
+NOTE: This does not work unless the application is named "etherpad".
+Instead, run with oc apply
+oc apply -f https://raw.githubusercontent.com/mmwillingham/sampleapps/main/gitops_apps/etherpad/prod/app-prod.yaml
 
 argocd app create etherpad-prod \
 --repo https://github.com/mmwillingham/sampleapps.git \
@@ -15,7 +13,6 @@ argocd app create etherpad-prod \
 --dest-namespace etherpad-prod \
 --sync-option CreateNamespace=true \
 --grpc-web
-
 
 
 # DELETE
