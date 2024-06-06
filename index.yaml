@@ -305,6 +305,17 @@ entries:
   hello-quay:
   - apiVersion: v2
     appVersion: v1.0
+    created: "2024-06-06T20:17:41.466417089Z"
+    description: Sample App
+    digest: 9178c46b80a91dd8864707d3d911c8522ce91433662e1546029a79c8375e3606
+    icon: https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png
+    name: hello-quay
+    type: application
+    urls:
+    - https://github.com/mmwillingham/sampleapps/releases/download/hello-quay-0.0.2/hello-quay-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: v1.0
     created: "2024-06-06T19:01:45.237581389Z"
     description: Sample App
     digest: e0979b74dc6d781773ea44e4158558f27386c8ab7e654c7d5350af23ec2ff557
@@ -314,6 +325,18 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/hello-quay-0.0.1/hello-quay-0.0.1.tgz
     version: 0.0.1
+  hello-quay-bg:
+  - apiVersion: v2
+    appVersion: v1.0
+    created: "2024-06-06T20:17:41.586737899Z"
+    description: Sample Blue Green App
+    digest: e910b39b93fded3ce2630f9c48a3ccbadb52d1a1532cd98c386bacfd505b5ffc
+    icon: https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png
+    name: hello-quay-bg
+    type: application
+    urls:
+    - https://github.com/mmwillingham/sampleapps/releases/download/hello-quay-bg-0.0.3/hello-quay-bg-0.0.3.tgz
+    version: 0.0.3
   swagger:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -337,4 +360,4 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/swagger-7.0.8/swagger-7.0.8.tgz
     version: 7.0.8
-generated: "2024-06-06T19:01:45.237665276Z"
+generated: "2024-06-06T20:17:41.58679196Z"
