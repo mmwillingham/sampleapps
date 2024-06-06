@@ -17,7 +17,7 @@ spec:
   sources:
     - chart: etherpad
       repoURL: https://mmwillingham.github.io/sampleapps
-      targetRevision: 0.0.24
+      targetRevision: 0.0.25
       helm:
         valueFiles:
         - $values/gitops_apps/etherpad/values-stage.yaml
