@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: hello-quay
-        #image: quay.io/redhattraining/do480-hello-app:v1.0
+        image: quay.io/redhattraining/do480-hello-app:v1.0
         #image: quay.io/redhattraining/do480-hello-app:latest
-        image: quay.io/redhattraining/do480-hello-app:NOT_A_VERSION
+        #image: quay.io/redhattraining/do480-hello-app:NOT_A_VERSION
   strategy:
     type: RollingUpdate
     rollingUpdate:

@@ -1,14 +1,15 @@
 argocd app create hello-quay-bg \
 --repo https://mmwillingham.github.io/sampleapps \
---helm-chart hello-quay \
---revision 0.0.1 \
+--helm-chart hello-quay-bg \
 --dest-server https://kubernetes.default.svc \
 --sync-policy automated \
 --self-heal \
 --sync-option Prune=true \
 --sync-option CreateNamespace=true \
 --project default \
---dest-namespace hello-quay-bg
+--dest-namespace hello-quay-bg \
+--revision 0.0.4
+
 
 while true; do curl https://hello-quay-hello-quay-bg.apps.bosez-20240521.5nay.p1.openshiftapps.com/; sleep 1; done
 
