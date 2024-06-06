@@ -18,8 +18,9 @@ spec:
     chart: etherpad
     repoURL: https://mmwillingham.github.io/sampleapps
     targetRevision: 0.0.25
+    ## override default values in values.yaml    
     helm:
-      values:
+      values: |
         replicas: 3
         fullnameOverride: "etherpad-stage" 
   destination:    
