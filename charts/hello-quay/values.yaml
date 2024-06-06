@@ -1,0 +1,4 @@
+name: hello-quay
+replicas: "1"
+image: quay.io/redhattraining/do480-hello-app
+imagetag: latest
