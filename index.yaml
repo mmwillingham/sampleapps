@@ -302,6 +302,18 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/etherpad-0.0.7/etherpad-0.0.7.tgz
     version: 0.0.7
+  hello-quay:
+  - apiVersion: v2
+    appVersion: v1.0
+    created: "2024-06-06T19:01:45.237581389Z"
+    description: Sample App
+    digest: e0979b74dc6d781773ea44e4158558f27386c8ab7e654c7d5350af23ec2ff557
+    icon: https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png
+    name: hello-quay
+    type: application
+    urls:
+    - https://github.com/mmwillingham/sampleapps/releases/download/hello-quay-0.0.1/hello-quay-0.0.1.tgz
+    version: 0.0.1
   swagger:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -325,4 +337,4 @@ entries:
     urls:
     - https://github.com/mmwillingham/sampleapps/releases/download/swagger-7.0.8/swagger-7.0.8.tgz
     version: 7.0.8
-generated: "2024-06-06T18:10:14.994753107Z"
+generated: "2024-06-06T19:01:45.237665276Z"
