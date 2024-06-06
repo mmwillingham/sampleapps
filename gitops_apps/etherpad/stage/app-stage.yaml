@@ -17,7 +17,7 @@ spec:
   source:
     chart: etherpad
     repoURL: https://mmwillingham.github.io/sampleapps/
-    targetRevision: 0.0.25
+    targetRevision: 0.0.26
     ## override default values in values.yaml    
     helm:
       values: |
