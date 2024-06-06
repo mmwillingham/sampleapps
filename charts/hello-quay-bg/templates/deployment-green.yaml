@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: hello-quay-green
-  replicas: "2"
+  replicas: "6"
   template:
     metadata:
       labels:
