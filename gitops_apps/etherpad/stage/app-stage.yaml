@@ -16,12 +16,12 @@ spec:
   project: default
   source:
     chart: etherpad
-    repoURL: https://mmwillingham.github.io/sampleapps
+    repoURL: https://mmwillingham.github.io/sampleapps/
     targetRevision: 0.0.25
     ## override default values in values.yaml    
     helm:
       values: |
-        replicas: 3
+        replicas: "3"
         fullnameOverride: "etherpad-stage" 
   destination:    
     server: https://kubernetes.default.svc
