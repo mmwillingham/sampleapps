@@ -1,12 +1,12 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: etherpad-stage
-  labels:
-    argocd.argoproj.io/managed-by: openshift-gitops
-  annotations:
-    argocd.argoproj.io/sync-wave: "-1"    
----
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: etherpad-stage
+#   labels:
+#     argocd.argoproj.io/managed-by: openshift-gitops
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "-1"    
+# ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -21,8 +21,8 @@ spec:
     ## override default values in values.yaml    
     helm:
       values: |
-        replicas: "3"
-        fullnameOverride: "etherpad-stage" 
+        replicas: "1"
+        fullnameOverride: "etherpad-stage"
   destination:    
     server: https://kubernetes.default.svc
     namespace: etherpad-stage
@@ -38,4 +38,4 @@ spec:
       kind: Route
       jsonPointers:
       - /status
-...
+#...
