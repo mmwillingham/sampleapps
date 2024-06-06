@@ -12,20 +12,7 @@ spec:
 EOF
 oc apply -f add_repo.yaml
 
-NOTE: This does not work unless the application is named "etherpad".
-Instead, run with oc apply
 oc apply -f https://raw.githubusercontent.com/mmwillingham/sampleapps/main/gitops_apps/etherpad/prod/app-prod.yaml
-
-argocd app create etherpad-prod \
---repo https://github.com/mmwillingham/sampleapps.git \
---path gitops_apps/etherpad/prod \
---dest-server https://kubernetes.default.svc \
---sync-policy automated  \
---self-heal \
---sync-option Prune=true \
---dest-namespace etherpad-prod \
---sync-option CreateNamespace=true \
---grpc-web
 
 
 # DELETE
