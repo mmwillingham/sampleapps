@@ -20,8 +20,5 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 3
-  minReadySeconds: 30
-  progressDeadlineSeconds: 60
-  paused: false  
+      maxSurge: 25%
+      maxUnavailable: 25%
