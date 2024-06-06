@@ -1,6 +1,6 @@
 # Default values for etherpad.
 
-replicaCount: 1
+replicaCount: 2
 
 defaultTitle: "Labs Etherpad"
 defaultText: "✍️ Assign yourself a user and share your ideas! ✍️"
@@ -13,7 +13,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "etherpad-prod"
+fullnameOverride: "etherpad-green"
 
 podSecurityContext: {}
 securityContext: {}
@@ -31,7 +31,6 @@ ingress:
 route:
   enabled: true
   #host: null
-  #host: etherpad-prod.apps.bosez-20240521.5nay.p1.openshiftapps.com
   targetPort: http
 
 resources: {}
