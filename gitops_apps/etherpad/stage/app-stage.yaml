@@ -19,12 +19,14 @@ spec:
       repoURL: https://mmwillingham.github.io/sampleapps
       targetRevision: 0.0.25
       helm:
-        valueFiles:
-        - $values/gitops_apps/etherpad/values-stage.yaml
-    # Values from Git
-    - repoURL: 'https://github.com/mmwillingham/sampleapps'
-      targetRevision: HEAD
-      ref: values        
+        values:
+          replicas: 3
+          fullnameOverride: "etherpad-stage"
+        # valueFiles:
+        # - $values/gitops_apps/etherpad/values-stage.yaml
+    # - repoURL: 'https://github.com/mmwillingham/sampleapps'
+    #   targetRevision: HEAD
+    #   ref: values        
   destination:    
     server: https://kubernetes.default.svc
     namespace: etherpad-stage
