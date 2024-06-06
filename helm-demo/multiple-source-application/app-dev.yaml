@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: dev
+    namespace: hello-world-dev
     name: kind
   project: default
   sources:
