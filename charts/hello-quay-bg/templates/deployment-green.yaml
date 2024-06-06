@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+spec:
+  selector:
+    matchLabels:
+      app: hello-quay-green
+  replicas: "2"
+  template:
+    metadata:
+      labels:
+        app: hello-quay-green
+    spec:
+      containers:
+      - name: hello-quay
+        #image: quay.io/redhattraining/do480-hello-app:v1.0
+        image: quay.io/redhattraining/do480-hello-app:latest
+        #image: quay.io/redhattraining/do480-hello-app:NOT_A_VERSION
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 3
+  minReadySeconds: 30
+  progressDeadlineSeconds: 60
+  paused: false  

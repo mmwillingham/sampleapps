@@ -1,0 +1,21 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: hello-quay
+  labels: {}
+spec:
+#  host: hello-quay.apps.ocp4.example.com
+#  subdomain: ''
+  to:
+    kind: Service
+    name: hello-quay-blue
+    weight: 100
+  alternateBackends:
+    - weight: 0
+      kind: Service
+      name: hello-quay-green
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
+  tls:
+    termination: edge  
