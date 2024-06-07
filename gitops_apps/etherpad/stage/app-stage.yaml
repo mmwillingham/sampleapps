@@ -9,7 +9,7 @@ spec:
     chart: etherpad
     repoURL: https://mmwillingham.github.io/sampleapps/
     targetRevision: 0.0.28
-    ## override default values in values.yaml    
+    ## override default values in values.yaml
     helm:
       values: |
         replicaCount: "1"
