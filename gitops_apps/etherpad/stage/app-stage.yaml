@@ -21,7 +21,7 @@ spec:
     ## override default values in values.yaml    
     helm:
       values: |
-        replicas: "1"
+        replicaCount: "1"
         fullnameOverride: "etherpad-stage"
   destination:    
     server: https://kubernetes.default.svc
