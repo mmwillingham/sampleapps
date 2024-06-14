@@ -1,4 +1,5 @@
 # To create a helm repo
+```
 cat << EOF > add_repo.yaml
 apiVersion: helm.openshift.io/v1beta1
 kind: HelmChartRepository
@@ -10,3 +11,4 @@ spec:
   name: MMW Helm Charts
 EOF
 oc apply -f add_repo.yaml
+```
