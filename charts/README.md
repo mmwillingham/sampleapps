@@ -1,4 +1,4 @@
-# To create a helm repo
+# To add a helm repo to OpenShift
 ```
 cat << EOF > add_repo.yaml
 apiVersion: helm.openshift.io/v1beta1
