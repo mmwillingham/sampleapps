@@ -1,0 +1,51 @@
+name: OCP-CLI
+on:
+  push:
+    branches: ['main']
+    paths: ['trigger/*']
+    
+jobs:
+  release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:    
+      - name: Checkout        
+        uses: actions/checkout@v3          
+        with:
+          fetch-depth: 0
+          
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"  
+
+      - name: OpenShift Tools Installer
+        uses: redhat-actions/openshift-tools-installer@v1.12
+        with: 
+          helm: "latest"
+          oc: "4.15.17"
+          
+      - name: Check Client Versions
+        shell: bash
+        run: |
+          set -x
+          oc version
+          helm version
+
+      - name: Login to OCP Cluster
+        env:
+          OCP_USR: ${{secrets.OCP_USR}}
+          OCP_PWD: ${{secrets.OCP_PWD}}
+          OCP_API: ${{secrets.OCP_API}}        
+        shell: bash        
+        run: oc login -u '${{secrets.OCP_USR}}' -p '${{secrets.OCP_PWD}}' '${{secrets.OCP_API}}' 
+
+      # change this job to oc apply a master app for app-of-apps pattern
+      #- name: Create new OCP namespace
+        #env:
+          #OCP_PROJ: bosez                 
+        #shell: bash        
+        #run: oc new-project $OCP_PROJ
