@@ -51,7 +51,7 @@ tolerations: []
 affinity: {}
 
 persistence:
-  enabled: false
+  enabled: true
   annotations: {}
   storageClass:
   accessMode: ReadWriteOnce
